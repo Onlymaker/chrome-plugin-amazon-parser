@@ -1,0 +1,30 @@
+﻿{
+  "name": "amazon-parser",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "icons": {
+    "48": "parser_small.png"
+  },
+  "permissions": [
+    "tabs","http://*/*","https://*/*"
+  ],
+  "browser_action": {
+    "default_icon": "parser.png",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": [
+      "jquery-1.8.3.min.js",
+      "service.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*","https://*/*"],
+      "js": [
+        "jquery-1.8.3.min.js",
+        "parser.js"
+      ]
+    }
+  ]
+}  
